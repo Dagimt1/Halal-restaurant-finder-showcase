@@ -1,0 +1,60 @@
+.scraper-page {
+    padding: 40px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    font-size: 1.75rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .description {
+    font-size: 1.25rem;
+    line-height: 2rem;
+    color: #666;
+  }
+  
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .code-snippet-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .code-card {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding: 20px;
+    font-family: monospace;
+    overflow: auto;
+  }
+  
+  pre {
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+  }
+  
+  .video-container {
+    text-align: center;  /* Ensures the text and content are centered */
+    margin-top: 40px;    /* Adds spacing above the video */
+  }
+  
+  .demo-video {
+    display: block;      /* Ensures the video takes up its own space */
+    margin-left: auto;   /* Centers the video horizontally */
+    margin-right: auto;  /* Centers the video horizontally */
+    width: 100%;         /* Makes the video responsive */
+    max-width: 800px;    /* Restricts the video width */
+    border-radius: 8px;  /* Adds a soft border radius for aesthetics */
+  }
+  
