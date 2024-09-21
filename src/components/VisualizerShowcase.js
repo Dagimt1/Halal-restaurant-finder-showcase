@@ -15,7 +15,7 @@ const VisualizerShowcase = () => {
           <strong>Amazon Scraper:</strong> The scraper extracts product details, tracks price changes, and alerts users to deals, making it easy to monitor Amazon prices without manually checking.
         </p>
         <p className="font-serif description">
-          You can <a href="https://amazon-scraper-webapp-dagim.vercel.app/" className="highlighted-link" target="_blank" rel="noopener noreferrer">see the deployed website here</a> to explore the functionality and test it out for yourself.
+          You can <a href="https://amazon-scraper-webapp-dagim.vercel.app/" className="highlighted-link">see the deployed website here</a> to explore the functionality and test it out for yourself.
         </p>
       </div>
 
