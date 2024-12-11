@@ -1,28 +1,28 @@
 import React from 'react';
-import scraperDemoVideo from './assets/scraperDemo.mp4';  // Import the demo video for the Amazon scraper
-import './AmazonScraperPage.css';  // Custom styles for the Amazon scraper page
+import scraperDemoVideo from './assets/halal-showcase.mp4'; // Using the imported demo video
+import './AmazonScraperPage.css';
 
 const AmazonScraperPage = () => {
   return (
     <div className="scraper-page">
-      <h1 className="font-serif title">Amazon Price Tracker & Scraper</h1>
+      <h1 className="font-serif title">Halal Savor Web App</h1>
       <p className="font-serif description">
-        The Amazon Price Tracker web app is designed to help users track the prices of products on Amazon. It automatically scrapes product details, maintains a price history, and sends email notifications when the price of a product drops below a set threshold.
+        The Halal Savor web app is a full-stack application designed to assist users in finding halal restaurants and food options. It includes a robust scraper script that collects restaurant data, tracks user preferences, and sends notifications about new halal spots.
       </p>
 
       <h2 className="font-serif subtitle">Key Features</h2>
       <ul className="font-serif description">
-        <li><strong>Scrape Amazon Products:</strong> The app scrapes product details like price, title, and description directly from Amazon, updating the database with the latest price.</li>
-        <li><strong>Track Price History:</strong> It keeps a detailed history of price changes, allowing users to see trends over time for each product.</li>
-        <li><strong>Email Notifications:</strong> Users can subscribe to specific products and receive email alerts when the price drops below their preferred threshold.</li>
-        <li><strong>Serverless Automation:</strong> A serverless function runs at scheduled intervals to automatically scrape and update product prices in the background.</li>
+        <li><strong>Discover Halal Restaurants:</strong> The app scrapes restaurant data from review platforms, offering halal options tailored to users' preferences.</li>
+        <li><strong>Preference Tracking:</strong> Users can save favorite restaurants and get notified when new options are available nearby.</li>
+        <li><strong>Email Alerts:</strong> The app sends email notifications about newly added halal spots matching user preferences.</li>
+        <li><strong>Automated Updates:</strong> A serverless function periodically scrapes and updates the database with fresh restaurant details.</li>
       </ul>
 
       <h2 className="font-serif subtitle">Workflow Overview</h2>
       <ul className="font-serif description">
-        <li><strong>Product Scraping:</strong> The scraper fetches product details like the current price and updates the product’s price history in the MongoDB database.</li>
-        <li><strong>Price Updates & Notifications:</strong> If a product's price drops below the user-defined threshold, an email notification is automatically sent to the user.</li>
-        <li><strong>Serverless Function:</strong> The scheduled serverless function fetches product data at regular intervals and updates the database in the background.</li>
+        <li><strong>Data Collection:</strong> The scraper gathers restaurant details, including name, location, and halal status, updating the database.</li>
+        <li><strong>Notifications:</strong> If new halal options match user preferences, notifications are sent automatically via email.</li>
+        <li><strong>Automated Scraping:</strong> The serverless function ensures data is refreshed regularly without manual intervention.</li>
       </ul>
 
       <h2 className="font-serif subtitle">Sample Code Snippets</h2>
@@ -30,67 +30,73 @@ const AmazonScraperPage = () => {
       {/* Code Snippet Cards */}
       <div className="code-snippet-cards">
         <div className="code-card">
-          <h3 className="font-serif">Product Scraping</h3>
+          <h3 className="font-serif">Scraping Restaurant Data</h3>
           <pre>
             {`
-import { scrapeAmazonProduct } from "@/lib/scraper";
+import { scrapeHalalRestaurant } from "@/lib/scraper";
 
-// Scrape product details from Amazon
-const scrapedProduct = await scrapeAmazonProduct(product.url);
-if (!scrapedProduct) throw new Error("Failed to scrape product");
+// Scrape restaurant details
+const scrapedData = await scrapeHalalRestaurant(restaurant.url);
+if (!scrapedData) throw new Error("Failed to scrape data");
             `}
           </pre>
         </div>
 
         <div className="code-card">
-          <h3 className="font-serif">Updating Price History</h3>
+          <h3 className="font-serif">Updating User Preferences</h3>
           <pre>
             {`
-const updatedPriceHistory = [
-  ...currentProduct.priceHistory,
-  { price: scrapedProduct.currentPrice }
+const updatedPreferences = [
+  ...user.preferences,
+  { restaurant: scrapedData.name }
 ];
 
-// Update product in MongoDB
-await Product.findOneAndUpdate({ url: product.url }, { priceHistory: updatedPriceHistory });
+// Update preferences in the database
+await User.findOneAndUpdate({ email: user.email }, { preferences: updatedPreferences });
             `}
           </pre>
         </div>
 
         <div className="code-card">
-          <h3 className="font-serif">Sending Email Notifications</h3>
+          <h3 className="font-serif">Sending Notifications</h3>
           <pre>
             {`
-const emailContent = await generateEmailBody(productInfo, emailNotifType);
-const userEmails = updatedProduct.users.map(user => user.email);
+const emailContent = generateEmailBody(restaurantInfo, notificationType);
+const recipientEmails = users.map(user => user.email);
 
-// Send notification emails
-await sendEmail(emailContent, userEmails);
+// Send email notifications
+await sendEmail(emailContent, recipientEmails);
             `}
           </pre>
         </div>
 
         <div className="code-card">
-          <h3 className="font-serif">Serverless Scraper Function</h3>
+          <h3 className="font-serif">Automated Scraper Function</h3>
           <pre>
             {`
 export async function GET(request) {
-  const products = await Product.find({});
-  await Promise.all(products.map(async (product) => {
-    const scrapedProduct = await scrapeAmazonProduct(product.url);
-    // Update product price and notify users
+  const restaurants = await Restaurant.find({});
+  await Promise.all(restaurants.map(async (restaurant) => {
+    const scrapedRestaurant = await scrapeHalalRestaurant(restaurant.url);
+    // Update restaurant data and notify users
   }));
-  return NextResponse.json({ message: "Products updated" });
+  return NextResponse.json({ message: "Data updated successfully" });
 }
             `}
           </pre>
         </div>
       </div>
 
-      {/* Final Demo Video */}
+      {/* Demo Video */}
       <div className="video-container">
-        <h2 className="font-serif subtitle">Amazon Scraper Demo</h2>
-        <video className="demo-video" src={scraperDemoVideo} controls />
+        <h2 className="font-serif subtitle">Halal Savor Demo</h2>
+        <video
+          className="demo-video"
+          src={scraperDemoVideo}
+          controls
+          autoplay
+          loop
+        />
       </div>
     </div>
   );

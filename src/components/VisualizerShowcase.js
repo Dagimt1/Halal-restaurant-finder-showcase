@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';  // Import Link for navigation
+import { Link } from 'react-router-dom';
 import './VisualizerShowcase.css';
 
 const VisualizerShowcase = () => {
@@ -9,33 +9,30 @@ const VisualizerShowcase = () => {
       <div className="left-section">
         <h1 className="font-serif title">Hey, I'm Dagim 👋</h1>
         <p className="font-serif description">
-          Welcome to the showcase of my Amazon Web Scraper project. This project is designed to help users track prices on Amazon. It scrapes product pages and compares prices over time, sending notifications when a price drops to a desired threshold.
+          Welcome to the showcase of my Halal Savor Web App project. This full-stack application empowers users to discover halal restaurants, manage their preferences, and receive notifications about new halal options in their area.
         </p>
         <p className="font-serif description">
-          <strong>Amazon Scraper:</strong> The scraper extracts product details, tracks price changes, and alerts users to deals, making it easy to monitor Amazon prices without manually checking.
+          <strong>Halal Savor:</strong> This app features a data scraper that fetches restaurant details and enables automated notifications, ensuring users never miss an opportunity to explore new halal spots.
         </p>
         <p className="font-serif description">
-          You can <a href="https://amazon-scraper-webapp-dagim.vercel.app/" className="highlighted-link">see the deployed website here</a> to explore the functionality and test it out for yourself.
+          You can <a href="https://halal-web-app-deployable-6qy5-b33qp9z01-dagimt1s-projects.vercel.app/" className="highlighted-link">see the deployed website here</a> to explore the functionality and experience it firsthand.
         </p>
       </div>
 
-      {/* Right Section - Amazon Scraper Card */}
+      {/* Right Section - Project Card */}
       <div className="right-section">
-        <div className="project-card">
-          <h2 className="font-serif">Projects · Amazon Scraper</h2>
-          <Link to="/amazon-scraper">  {/* Link to the Amazon scraper page */}
+        <Link to="/amazon-scraper" className="project-link"> {/* Wrap entire card in Link */}
+          <div className="project-card">
+            <h2 className="font-serif">Projects · Halal Savor</h2>
             <div className="card-content">
-              <video
-                className="video-bg"
-                src="https://cdn.dribbble.com/users/56759/screenshots/14591746/media/ecb363e61b390885c65d2015f1ead233.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
+              <img
+                className="image-bg"
+                src="https://cdn.dribbble.com/users/1703271/screenshots/10834974/media/bc73cd2e899a671b44257ab35991cfd4.jpg?resize=1600x1200&vertical=center"
+                alt="Halal Savor Web App"
               />
             </div>
-          </Link>
-        </div>
+          </div>
+        </Link>
       </div>
     </div>
   );
